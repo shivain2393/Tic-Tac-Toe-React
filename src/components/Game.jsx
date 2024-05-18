@@ -30,7 +30,7 @@
       else if(winner === "O"){
         setOScore(oScore + 1);
       }
-    },[winner])
+    },[isWon])
 
     const checkWin = (gameBoard) => {
       for (let pattern of winPatterns) {
@@ -55,6 +55,7 @@
 
 
     const resetGame = () => {
+      setWinner(null);
       setBoard(Array(9).fill(null));
       setIsWon(false);
       setDisableButtons(false);
